@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecommendedClothesView: View {
-    let clothes = ["coat", "hoodie", "pants", "shawl"]
+    let clothes = ["Coat01", "Hoodie", "Pants", "Shawl"]
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 24)
@@ -28,9 +28,9 @@ struct RecommendedClothesView: View {
                         VStack(spacing: 2){
                             Image(cl)
                                 .resizable()
-                                .frame(width: 30, height: 40)
+                                .frame(width: 40, height: 40)
                             Text("\(cl)")
-                                .fontWeight(.medium)
+                                .font(.system(size: 14, weight: .medium))
                         }
                     }
                 }
