@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var vm = WeatherViewModel()
+    
     var body: some View {
         ZStack{
             Color(red: 190/255, green: 220/255, blue: 255/255)
