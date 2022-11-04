@@ -12,8 +12,9 @@ struct RecommendedClothesView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 24)
-                .fill(.blue) //날씨에 따라 다른 색상
-                .opacity(0.2)
+                .fill(.white) //날씨에 따라 다른 색상
+//                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                .opacity(0.3)
                 .frame(height: 160)
             VStack {
                 Text("Recommended Clothes")

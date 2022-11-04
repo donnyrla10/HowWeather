@@ -11,8 +11,8 @@ struct CurrentInfoView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 24)
-                .fill(.blue) //날씨에 따라 다른 색상
-                .opacity(0.2)
+                .fill(.white) //날씨에 따라 다른 색상
+                .opacity(0.3)
                 .frame(height: 440)
             VStack {
                 Text("Current Information")
@@ -26,8 +26,8 @@ struct CurrentInfoView: View {
                     HStack(spacing: 10){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
-                                .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
+                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .opacity(0.4)                                .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("sunrise")
                                     .foregroundColor(.white)
@@ -39,7 +39,8 @@ struct CurrentInfoView: View {
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
+                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("sunset")
@@ -54,7 +55,8 @@ struct CurrentInfoView: View {
                     HStack(spacing: 10){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
+                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("Feels Like")
@@ -67,7 +69,8 @@ struct CurrentInfoView: View {
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
+                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("visibility")
@@ -82,7 +85,8 @@ struct CurrentInfoView: View {
                     HStack(spacing: 10){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
+                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("pressure")
@@ -95,7 +99,8 @@ struct CurrentInfoView: View {
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
+                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("humidity")

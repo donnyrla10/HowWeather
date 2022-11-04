@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     var body: some View {
-        HStack(spacing: 0){
+        HStack(spacing: 10){
             VStack(spacing: 4){
                 VStack(spacing: 2){
                     Text("Seoul") //current city name
@@ -33,12 +33,12 @@ struct HeaderView: View {
             .multilineTextAlignment(.center)
             .shadow(radius: 4)
             .frame(width: UIScreen.main.bounds.width / 2)
-
-            Image(systemName: "person") //character image
+            Image("Winter01") //character image
                 .resizable()
-                .frame(width: UIScreen.main.bounds.width / 2.6, height: UIScreen.main.bounds.height / 5)
+                .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 4.8)
         }
         .frame(width: UIScreen.main.bounds.width)
+        .padding(.trailing, 25)
     }
 }
 

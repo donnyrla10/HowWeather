@@ -11,7 +11,9 @@ struct HourlyView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color(red: 178/255, green: 204/255, blue: 255/255))
+//                .fill(Color.white)
+                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                .opacity(0.4)
                 .frame(width: 55, height: 110)
             VStack(spacing: 4){
                 Text("00")

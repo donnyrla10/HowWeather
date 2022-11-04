@@ -12,12 +12,13 @@ struct HomeView: View {
     
     var body: some View {
         ZStack{
-            Color(red: 190/255, green: 220/255, blue: 255/255)
+            Image("01db")
+                .resizable()
                 .ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 20){
                     HeaderView()
-                        .padding(.vertical, 50)
+                        .padding(.vertical, 40)
                     RecommendedClothesView()
                     HourlyForecastView()
                     DailyForecastView()
@@ -33,3 +34,5 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
+
