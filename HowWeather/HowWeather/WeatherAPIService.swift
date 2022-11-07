@@ -17,12 +17,16 @@ class WeatherAPIService {
     private let decoder = JSONDecoder()
     
     //query: lat, lon
-    private func currentWeatherURL(lat: Double, lon: Double) -> URL {
-        return URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKEY)")!
+    private func currentWeatherURL(lat: Double, lon: Double, city: String) -> URL {
+//        return URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric&appid=\(apiKEY)")!
+        return URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&units=metric&appid=\(apiKEY)")!
+
     }
     
-    private func forecastWeatherURL(lat: Double, lon: Double) -> URL {
-        return URL(string: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKEY)")!
+    private func forecastWeatherURL(lat: Double, lon: Double, city: String) -> URL {
+//        return URL(string: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&units=metric&appid=\(apiKEY)")!
+        return URL(string: "https://api.openweathermap.org/data/2.5/forecast?q=\(city)&units=metric&appid=\(apiKEY)")!
+
     }
     
     init(configuration: URLSessionConfiguration) {
@@ -35,7 +39,7 @@ class WeatherAPIService {
     
     //request weatherCurrentAPI
     func getCurrentRequest(completionHandler completion: @escaping( _ object: CurrentWeather?, _ error: Error?) -> ()) {
-        let url = currentWeatherURL(lat: 39.31, lon: -74.5)
+        let url = currentWeatherURL(lat: 39.31, lon: -74.5, city: "Seoul")
         let request = URLRequest(url: url)
         
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -47,9 +51,11 @@ class WeatherAPIService {
                             let result = try self.decoder.decode(CurrentWeather.self, from: data)
                             print("🌥 current weather Data")
                             print(result)
+                            completion(result, nil)
                         } catch let error {
                             print("🚨 error")
                             print(String(describing: error))
+                            completion(nil, error)
                         }
                     } else {
                         print("invalid data error")
@@ -57,6 +63,7 @@ class WeatherAPIService {
                 } else if let error = error {
                     print("🚨 error")
                     print(String(describing: error))
+                    completion(nil, error)
                 }
             }
         }
@@ -65,7 +72,7 @@ class WeatherAPIService {
     
     //request forecastWeatherAPI
     func getForecastRequest(completionHandler completion: @escaping( _ object: ForecastWeather?, _ error: Error?) -> ()) {
-        let url = forecastWeatherURL(lat: 39.31, lon: -74.5)
+        let url = forecastWeatherURL(lat: 39.31, lon: -74.5, city: "Seoul")
         let request = URLRequest(url: url)
         
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -77,9 +84,11 @@ class WeatherAPIService {
                             let result = try self.decoder.decode(ForecastWeather.self, from: data)
                             print("🌥 forescast Data")
                             print(result)
+                            completion(result, nil)
                         } catch let error {
                             print("🚨 error")
                             print(String(describing: error))
+                            completion(nil, error)
                         }
                     } else {
                         print("invalid data error")
@@ -87,6 +96,7 @@ class WeatherAPIService {
                 } else if let error = error {
                     print("🚨 error")
                     print(String(describing: error))
+                    completion(nil, error)
                 }
             }
         }

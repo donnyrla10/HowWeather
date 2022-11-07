@@ -14,21 +14,23 @@ struct DailyForecastView: View {
                 .fill(.white) //날씨에 따라 다른 색상
 //                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
                 .opacity(0.3)
-                .frame(height: 700)
+                .frame(height: 740)
             VStack {
                 Text("Daily Forecast")
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                     .frame(width: UIScreen.main.bounds.width - 50, alignment: .leading)
                 Divider()
+                    .frame(height: 1.2)
+                    .overlay(.white)
                     .padding(.leading, 16)
                     .padding(.bottom, 10)
-                VStack(spacing: 12){
+                VStack(spacing: 16){
                     ForEach(0..<10, id: \.self) { _ in
                         DailyView()
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width - 40, height: 600, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width - 40, height: 650, alignment: .center)
             }
         }
         .frame(width: UIScreen.main.bounds.width - 20, alignment: .center)

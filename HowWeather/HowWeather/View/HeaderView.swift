@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct HeaderView: View {
+    let currentData : CurrentWeather
     var body: some View {
         HStack(spacing: 10){
             VStack(spacing: 4){
                 VStack(spacing: 2){
-                    Text("Seoul") //current city name
+                    Text("\(currentData.name)") //current city name
                         .font(.system(size: 28, weight: .regular))
                         .lineLimit(2)
-                    Text("16º") //current temp
+                    Text("\(Int(currentData.main.temp))º") //current temp
                         .font(.system(size: 74, weight: .light))
                 }
                 VStack(spacing: 6){
-                    Text("broken clouds") //current weather description
+                    Text("\(currentData.weather[0].description)") //current weather description
                         .lineLimit(2)
                         .font(.system(size: 20, weight: .regular))
                     HStack(spacing: 20){
-                        Text("H: 17º") //max temp
-                        Text("L: 4º")  //min temp
+                        Text("H: \(Int(currentData.main.tempMax))º") //max temp
+                        Text("L: \(Int(currentData.main.tempMin))º")  //min temp
                     }
                     .font(.system(size: 16, weight: .regular))
                 }
@@ -44,6 +45,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(currentData: CurrentWeather.emptyInit())
     }
 }

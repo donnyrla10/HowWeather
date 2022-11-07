@@ -20,6 +20,8 @@ struct CurrentInfoView: View {
                     .fontWeight(.semibold)
                     .frame(width: UIScreen.main.bounds.width - 50, alignment: .leading)
                 Divider()
+                    .frame(height: 1.2)
+                    .overlay(.white)
                     .padding(.leading, 16)
                     .padding(.bottom, 10)
                 VStack(spacing: 10){

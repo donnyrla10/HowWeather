@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var vm = WeatherViewModel()
+    let data : CurrentWeather
+    
+    var iconName: String {
+        return data.weather[0].icon + "b"
+    }
     
     var body: some View {
         ZStack{
-            Image("01db")
+//            Image("02db")
+            Image(iconName)
                 .resizable()
                 .ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 20){
-                    HeaderView()
+                    HeaderView(currentData: data)
                         .padding(.vertical, 40)
                     RecommendedClothesView()
                     HourlyForecastView()
@@ -29,9 +34,9 @@ struct HomeView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(data: CurrentWeather.emptyInit())
     }
 }
 

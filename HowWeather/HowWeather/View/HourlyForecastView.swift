@@ -19,10 +19,12 @@ struct HourlyForecastView: View {
                 Text("Hourly Forecast")
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
-                    .frame(width: UIScreen.main.bounds.width - 60, alignment: .leading)
+                    .frame(width: UIScreen.main.bounds.width - 50, alignment: .leading)
                 Divider()
+                    .frame(height: 1.2)
+                    .overlay(.white)
                     .padding(.leading, 16)
-                    .padding(.bottom, 6)
+                    .padding(.top, -4)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 16){
                         ForEach(0...10, id: \.self) { _ in
@@ -30,7 +32,7 @@ struct HourlyForecastView: View {
                         }
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width - 48, height: 136, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width - 48, height: 130, alignment: .center)
             }
         }
         .frame(width: UIScreen.main.bounds.width - 20, alignment: .center)

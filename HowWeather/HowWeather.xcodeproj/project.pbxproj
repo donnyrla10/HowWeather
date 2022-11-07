@@ -24,6 +24,8 @@
 		F899F50829140F19005F0605 /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F899F50729140F19005F0605 /* ForecastWeather.swift */; };
 		F899F50A29140FC0005F0605 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F899F50929140FC0005F0605 /* Forecast.swift */; };
 		F899F50C2914111F005F0605 /* WeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F899F50B2914111F005F0605 /* WeatherAPIService.swift */; };
+		F8BA34A02918FB1A009B16AA /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA349F2918FB1A009B16AA /* StateModel.swift */; };
+		F8BA34A22918FC26009B16AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA34A12918FC26009B16AA /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		F899F50729140F19005F0605 /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 		F899F50929140FC0005F0605 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F899F50B2914111F005F0605 /* WeatherAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIService.swift; sourceTree = "<group>"; };
+		F8BA349F2918FB1A009B16AA /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
+		F8BA34A12918FC26009B16AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				F83ECE7A2907BD7400E826F0 /* Assets.xcassets */,
 				F83ECE7C2907BD7400E826F0 /* Preview Content */,
 				F899F50B2914111F005F0605 /* WeatherAPIService.swift */,
+				F8BA34A12918FC26009B16AA /* ContentView.swift */,
 			);
 			path = HowWeather;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				F899F4FA2913FC27005F0605 /* CurrentWeather.swift */,
 				F899F50729140F19005F0605 /* ForecastWeather.swift */,
 				F899F50929140FC0005F0605 /* Forecast.swift */,
+				F8BA349F2918FB1A009B16AA /* StateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,12 +221,14 @@
 				F83ECE792907BD6F00E826F0 /* HomeView.swift in Sources */,
 				F82DB85E29090F5000D88BEC /* HeaderView.swift in Sources */,
 				F83ECE772907BD6F00E826F0 /* HowWeatherApp.swift in Sources */,
+				F8BA34A22918FC26009B16AA /* ContentView.swift in Sources */,
 				F82DB86429091BA600D88BEC /* HourlyView.swift in Sources */,
 				F82DB8662909228C00D88BEC /* DailyForecastView.swift in Sources */,
 				F82DB860290916D900D88BEC /* RecommendedClothesView.swift in Sources */,
 				F899F50829140F19005F0605 /* ForecastWeather.swift in Sources */,
 				F82DB86229091B9800D88BEC /* HourlyForecastView.swift in Sources */,
 				F899F50629140009005F0605 /* WeatherViewModel.swift in Sources */,
+				F8BA34A02918FB1A009B16AA /* StateModel.swift in Sources */,
 				F82DB8682909229400D88BEC /* DailyView.swift in Sources */,
 				F899F4FB2913FC27005F0605 /* CurrentWeather.swift in Sources */,
 			);

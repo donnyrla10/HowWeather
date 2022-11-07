@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecommendedClothesView: View {
-    let clothes = ["Coat01", "Hoodie", "Pants", "Shawl"]
+    let clothes = ["coat", "hoodie", "pants", "shawl"]
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 24)
@@ -22,20 +22,23 @@ struct RecommendedClothesView: View {
                     .fontWeight(.semibold)
                     .frame(width: UIScreen.main.bounds.width - 50, alignment: .leading)
                 Divider()
+                    .frame(height: 1.2)
+                    .overlay(.white)
                     .padding(.leading, 16)
-                    .padding(.bottom, 15)
+                    .padding(.top, -4)
                 HStack(spacing: 36){
                     ForEach(clothes, id: \.self) { cl in
                         VStack(spacing: 2){
                             Image(cl)
                                 .resizable()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 50, height: 50)
                             Text("\(cl)")
-                                .font(.system(size: 14, weight: .medium))
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.white)
                         }
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width - 50, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width - 50, height: 90, alignment: .center)
             }
         }
         .frame(width: UIScreen.main.bounds.width - 20, alignment: .center)
