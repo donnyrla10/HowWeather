@@ -19,7 +19,8 @@ struct Rain3h: Codable {
     }
 }
 
-struct Forecast: Codable {
+struct Forecast: Codable, Identifiable {
+    let id = UUID()
     let date: Int
     let main: Main
     let weather: [Weather]
@@ -31,7 +32,6 @@ struct Forecast: Codable {
     }
     
     static func emptyInit() -> Forecast {
-        return Forecast(date: 0,
-                        main: Main.emptyInit(), weather: [Weather.emptyInit()])
+        return Forecast(date: 0, main: Main.emptyInit(), weather: [Weather.emptyInit()])
     }
 }

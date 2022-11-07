@@ -26,6 +26,7 @@
 		F899F50C2914111F005F0605 /* WeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F899F50B2914111F005F0605 /* WeatherAPIService.swift */; };
 		F8BA34A02918FB1A009B16AA /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA349F2918FB1A009B16AA /* StateModel.swift */; };
 		F8BA34A22918FC26009B16AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA34A12918FC26009B16AA /* ContentView.swift */; };
+		F8BA34A729193051009B16AA /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA34A629193051009B16AA /* DateTransform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		F899F50B2914111F005F0605 /* WeatherAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIService.swift; sourceTree = "<group>"; };
 		F8BA349F2918FB1A009B16AA /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		F8BA34A12918FC26009B16AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F8BA34A629193051009B16AA /* DateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		F83ECE752907BD6F00E826F0 /* HowWeather */ = {
 			isa = PBXGroup;
 			children = (
+				F8BA34A529193032009B16AA /* Utilities */,
 				F899F5042913FFF6005F0605 /* ViewModel */,
 				F899F4F92913FC13005F0605 /* Model */,
 				F82DB86D29092A0A00D88BEC /* Modifier */,
@@ -111,7 +114,6 @@
 				F83ECE782907BD6F00E826F0 /* HomeView.swift */,
 				F83ECE7A2907BD7400E826F0 /* Assets.xcassets */,
 				F83ECE7C2907BD7400E826F0 /* Preview Content */,
-				F899F50B2914111F005F0605 /* WeatherAPIService.swift */,
 				F8BA34A12918FC26009B16AA /* ContentView.swift */,
 			);
 			path = HowWeather;
@@ -142,6 +144,15 @@
 				F899F50529140009005F0605 /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F8BA34A529193032009B16AA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F899F50B2914111F005F0605 /* WeatherAPIService.swift */,
+				F8BA34A629193051009B16AA /* DateTransform.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			files = (
 				F899F50C2914111F005F0605 /* WeatherAPIService.swift in Sources */,
 				F82DB87129092B3800D88BEC /* HalfSheetController.swift in Sources */,
+				F8BA34A729193051009B16AA /* DateTransform.swift in Sources */,
 				F82DB86A2909265C00D88BEC /* CurrentInfoView.swift in Sources */,
 				F899F50A29140FC0005F0605 /* Forecast.swift in Sources */,
 				F83ECE792907BD6F00E826F0 /* HomeView.swift in Sources */,

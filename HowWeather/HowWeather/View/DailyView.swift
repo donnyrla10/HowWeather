@@ -11,8 +11,8 @@ struct DailyView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 16)
-//                .fill(.white)
-                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                .fill(.white)
+//                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
                 .opacity(0.4)
                 .frame(width: UIScreen.main.bounds.width - 60, height: 50)
             HStack{

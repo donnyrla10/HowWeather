@@ -23,14 +23,14 @@ class WeatherViewModel: ObservableObject {
         }
     }
     
-//    var hourlyWeather : [Forecast] = [] {
-//        willSet {
-//            objectWillChange.send()
-//        }
-//    }
+    var hourlyWeather : [Forecast] = [] { //forecast 데이터
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     private var stateCurrent = StateModel.loading
-//    private var stateForecast = StateModel.loading
+    private var stateForecast = StateModel.loading
     
     init(){
         getData()
@@ -39,7 +39,7 @@ class WeatherViewModel: ObservableObject {
     func retry(){
         stateModel = .loading
         stateCurrent = .loading
-//        stateForecast = .loading
+        stateForecast = .loading
         getData()
     }
     
@@ -58,18 +58,19 @@ class WeatherViewModel: ObservableObject {
             weather.updateStateView()
         }
         
-//        apiService.getForecastWeather() { [weak self] forecastWeather, error in
-//            guard let weather = self else {return}
-//            if let forecastWeather = forecastWeather {
-//                weather.hourlyWeather = forecastWeather.list
-//                weather.stateForecast = .success
-//            }else {
-//                weather.stateForecast = .failed
-//            }
-//            weather.updateStateView()
-//        }
+        apiService.getForecastWeather() { [weak self] forecastWeather, error in
+            guard let weather = self else {return}
+            if let forecastWeather = forecastWeather {
+                weather.hourlyWeather = forecastWeather.list
+                weather.stateForecast = .success
+            }else {
+                weather.stateForecast = .failed
+                print("🚨🚨 failed")
+            }
+            weather.updateStateView()
+        }
     }
-    
+
     private func updateStateView() {
         if stateCurrent == .success/*, stateForecast == .success*/ {
             stateModel = .success

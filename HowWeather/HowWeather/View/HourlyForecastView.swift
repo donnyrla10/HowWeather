@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HourlyForecastView: View {
+    let hourly : [Forecast]
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 24)
@@ -27,8 +28,8 @@ struct HourlyForecastView: View {
                     .padding(.top, -4)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 16){
-                        ForEach(0...10, id: \.self) { _ in
-                            HourlyView()
+                        ForEach(hourly) { hour in
+                            HourlyView(data: hour)
                         }
                     }
                 }
@@ -41,6 +42,6 @@ struct HourlyForecastView: View {
 
 struct HourlyForecastView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyForecastView()
+        HourlyForecastView(hourly: [Forecast.emptyInit()])
     }
 }

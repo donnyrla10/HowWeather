@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     let data : CurrentWeather
+    let hourly: [Forecast]
     
     var iconName: String {
         return data.weather[0].icon + "b"
@@ -25,7 +26,7 @@ struct HomeView: View {
                     HeaderView(currentData: data)
                         .padding(.vertical, 40)
                     RecommendedClothesView()
-                    HourlyForecastView()
+                    HourlyForecastView(hourly: hourly)
                     DailyForecastView()
                     CurrentInfoView()
                 }
@@ -36,8 +37,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(data: CurrentWeather.emptyInit())
+        HomeView(data: CurrentWeather.emptyInit(), hourly: [Forecast.emptyInit()])
     }
 }
-
-
