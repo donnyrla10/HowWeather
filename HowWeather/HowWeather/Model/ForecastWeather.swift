@@ -30,7 +30,7 @@ struct ForecastWeather: Codable {
             return daily //빈 배열 반환
         }
         
-        var nextDay = first.date.dateFromMilliseconds().day()
+        var nextDay = first.date.dateFromMilliseconds().day() //오늘 요일
         //daily == list의 첫번째 원소 (현재 시각 다음의 +3H인 예측)
 //        if first.date.dateFromMilliseconds().day() != Date().day() { //오늘의 요일과 다르다면 (집어넣기)
 //            nextDay = first.date.dateFromMilliseconds().day() //내일 요일
@@ -45,9 +45,9 @@ struct ForecastWeather: Codable {
         for data in list { //앞에서부터 차례대로 list 순회
             if data.date.dateFromMilliseconds().day() == nextDay { //nextDay인 경우
                 if entity.date == 0 { entity.date = data.date }
-                if data.date.dateFromMilliseconds().hour() == "15" { //오후 3시의 아이콘을 대표 아이콘으로 사용
+                if data.date.dateFromMilliseconds().Hour() == "15" { //오후 3시의 아이콘을 대표 아이콘으로 사용
                     entity.weather[0].icon = data.weather[0].icon
-                } else if data.date.dateFromMilliseconds().hour() > "15" && entity.weather[0].icon == "" {
+                } else if data.date.dateFromMilliseconds().Hour() > "15" && entity.weather[0].icon == "" {
                     entity.weather[0].icon = data.weather[0].icon //오후 3시 이후라면 현재 시각의 아이콘을 넣어준다.
                 }
                 maxTmp = maxTmp < Double(data.main.temp) ? Double(data.main.temp) : maxTmp //같은 요일의 최고 기온 구하기

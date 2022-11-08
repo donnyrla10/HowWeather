@@ -9,16 +9,16 @@ import SwiftUI
 
 struct HourlyView: View {
     var data : Forecast
-    
-    var hour: String {
-        var H = data.date.dateFromMilliseconds().hour()
-        let time = ("00"..."11") ~= H ? "AM" : "PM"
-        if H == "00" || H == "24" { H = "12" }
-        if ("13"..."23") ~= H {
-            H = String(Int(H) ?? 0 - 12)
-        }
-        return time + " " + H
-    }
+//
+//    var hour: String {
+//        var H = data.date.dateFromMilliseconds().hour()
+//        let time = ("00"..."11") ~= H ? "AM" : "PM"
+//        if H == "00" || H == "24" { H = "12" }
+//        if ("13"..."23") ~= H {
+//            H = String(Int(H) ?? 0 - 12)
+//        }
+//        return time + " " + H
+//    }
     
     var body: some View {
         ZStack{
@@ -28,7 +28,7 @@ struct HourlyView: View {
                 .opacity(0.4)
                 .frame(width: 55, height: 110)
             VStack(spacing: 8){
-                Text(hour)
+                Text(data.date.dateFromMilliseconds().hour())
                     .foregroundColor(.white)
                     .font(.system(size: 13, weight: .medium))
                 Image(data.weather[0].icon)

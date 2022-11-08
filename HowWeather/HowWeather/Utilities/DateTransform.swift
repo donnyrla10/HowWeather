@@ -16,19 +16,31 @@ extension Int {
 extension Date {
     func hour() -> String { //시간
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "a hh"
+        return dateFormatter.string(from: self)
+    }
+    
+    func Hour() -> String {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"
         return dateFormatter.string(from: self)
     }
     
     func hourNminute() -> String { //시간: 분
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "a hh:mm"
         return dateFormatter.string(from: self)
     }
     
     func day() -> String { //요일
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E"
+        return dateFormatter.string(from: self)
+    }
+    
+    func monthly() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M"
         return dateFormatter.string(from: self)
     }
     

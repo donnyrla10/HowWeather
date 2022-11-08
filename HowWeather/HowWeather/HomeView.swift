@@ -24,7 +24,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 20){
-                    HeaderView(currentData: data)
+                    HeaderView(currentData: data, dailyData: daily)
                         .padding(.vertical, 40)
                     RecommendedClothesView()
                     HourlyForecastView(hourly: hourly)
