@@ -8,6 +8,28 @@
 import SwiftUI
 
 struct CurrentInfoView: View {
+    let currentData : CurrentWeather
+    
+    var sunrise: String {
+        return currentData.sys.sunrise.dateFromMilliseconds().hourNminute()
+    }
+    
+    var sunset: String {
+        return currentData.sys.sunset.dateFromMilliseconds().hourNminute()
+    }
+    
+    var visibility: String {
+        return "\(Int(currentData.visibility / 1000))km"
+    }
+    
+    var pressure: String {
+        return "\(currentData.main.pressure) hPa"
+    }
+    
+    var humidity: String {
+        return "\(currentData.main.humidity)%"
+    }
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 24)
@@ -28,89 +50,96 @@ struct CurrentInfoView: View {
                     HStack(spacing: 10){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
-                                .opacity(0.4)                                .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
+//                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .fill(.white)
+                                .opacity(0.4)
+                                .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("sunrise")
                                     .foregroundColor(.white)
                                     .font(.system(size: 18, weight: .semibold))
-                                Text("06:45")
+                                Text(sunrise)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+//                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .fill(.white)
                                 .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("sunset")
                                     .foregroundColor(.white)
                                     .font(.system(size: 18, weight: .semibold))
-                                Text("19:01")
+                                Text(sunset)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                         }
                     }
                     HStack(spacing: 10){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+//                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .fill(.white)
                                 .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
-                                Text("Feels Like")
+                                Text("feels like")
                                     .foregroundColor(.white)
                                     .font(.system(size: 18, weight: .semibold))
-                                Text("11º")
+                                Text("\(Int(currentData.main.feelsLike))º")
                                     .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+//                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .fill(.white)
                                 .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("visibility")
                                     .foregroundColor(.white)
                                     .font(.system(size: 18, weight: .semibold))
-                                Text("10km")
+                                Text(visibility)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                         }
                     }
                     HStack(spacing: 10){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+//                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .fill(.white)
                                 .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("pressure")
                                     .foregroundColor(.white)
                                     .font(.system(size: 18, weight: .semibold))
-                                Text("3 hPa")
+                                Text(pressure)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+//                                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+                                .fill(.white)
                                 .opacity(0.4)
                                 .frame(width: UIScreen.main.bounds.width / 2 - 36, height: 110)
                             VStack(spacing: 10){
                                 Text("humidity")
                                     .foregroundColor(.white)
                                     .font(.system(size: 18, weight: .semibold))
-                                Text("10%")
+                                Text(humidity)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 24, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                         }
                     }
@@ -124,6 +153,6 @@ struct CurrentInfoView: View {
 
 struct CurrentInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentInfoView()
+        CurrentInfoView(currentData: CurrentWeather.emptyInit())
     }
 }

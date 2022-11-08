@@ -8,9 +8,9 @@
 import Foundation
 
 struct Weather : Codable {
-    let main: String
+    var main: String
     let description: String
-    let icon: String
+    var icon: String
     
     static func emptyInit() -> Weather {
         return Weather(main: "", description: "", icon: "")
@@ -20,8 +20,8 @@ struct Weather : Codable {
 struct Main: Codable {
     let temp: Double
     let feelsLike: Double
-    let tempMin: Double
-    let tempMax: Double
+    var tempMin: Double
+    var tempMax: Double
     let pressure: Int
     let humidity: Int
     

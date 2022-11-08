@@ -8,28 +8,38 @@
 import SwiftUI
 
 struct DailyView: View {
+    var data : Forecast
+
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 16)
-                .fill(.white)
-//                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
+//                .fill(.white)
+                .fill(Color(red: 0.449, green: 0.596, blue: 0.918))
                 .opacity(0.4)
                 .frame(width: UIScreen.main.bounds.width - 60, height: 50)
             HStack{
-                Text("WED")
+                Text(data.date.dateFromMilliseconds().day())
+                    .frame(width: 44)
                 Spacer()
-                HStack(spacing: 10){
-                    Image("10d")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text("70%")
+                    Image("\(data.weather[0].icon)")
+//                Image("50d")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .padding(.leading, 28)
+                Spacer()
+                HStack(spacing: 5){
+                    Text("\(Int(data.main.tempMin))º")
+//                    Text("-20º")
+                        .frame(width: 36, alignment: .trailing)
+                    Text("/")
+                    Text("\(Int(data.main.tempMax))º")
+//                    Text("-30º")
+                        .frame(width: 36, alignment: .leading)
                 }
-                Spacer()
-                Text("4º / 10º")
             }
             .foregroundColor(.white)
             .font(.system(size: 16, weight: .semibold))
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 10)
         }
         .frame(width: UIScreen.main.bounds.width - 60, alignment: .center)
     }
@@ -37,6 +47,6 @@ struct DailyView: View {
 
 struct DailyView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyView()
+        DailyView(data: Forecast.emptyInit())
     }
 }

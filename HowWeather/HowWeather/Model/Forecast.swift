@@ -19,11 +19,11 @@ struct Rain3h: Codable {
     }
 }
 
-struct Forecast: Codable, Identifiable {
-    let id = UUID()
-    let date: Int
-    let main: Main
-    let weather: [Weather]
+struct Forecast: Codable{
+//    let id = UUID()
+    var date: Int
+    var main: Main
+    var weather: [Weather]
 //    let rain: Rain3h
     
     private enum CodingKeys: String, CodingKey {
@@ -33,5 +33,11 @@ struct Forecast: Codable, Identifiable {
     
     static func emptyInit() -> Forecast {
         return Forecast(date: 0, main: Main.emptyInit(), weather: [Weather.emptyInit()])
+    }
+}
+
+extension Forecast: Identifiable {
+    var id : String { //id를 UUID가 아니라 date로 함
+        return "\(date)"
     }
 }

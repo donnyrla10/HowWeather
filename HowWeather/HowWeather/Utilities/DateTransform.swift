@@ -22,7 +22,7 @@ extension Date {
     
     func hourNminute() -> String { //시간: 분
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH.mm"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
     

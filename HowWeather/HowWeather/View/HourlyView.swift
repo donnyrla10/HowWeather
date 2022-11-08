@@ -31,7 +31,7 @@ struct HourlyView: View {
                 Text(hour)
                     .foregroundColor(.white)
                     .font(.system(size: 13, weight: .medium))
-                Image("\(data.weather[0].icon)")
+                Image(data.weather[0].icon)
                     .resizable()
                     .frame(width: 20, height: 20)
                 Text("\(Int(data.main.temp))º")

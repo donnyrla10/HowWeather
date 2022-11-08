@@ -34,7 +34,7 @@ struct HeaderView: View {
             .multilineTextAlignment(.center)
             .shadow(radius: 4)
             .frame(width: UIScreen.main.bounds.width / 2)
-            Image("Winter01") //character image
+            Image("winter01") //character image
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 4.8)
         }

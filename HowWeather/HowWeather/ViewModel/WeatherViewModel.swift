@@ -29,6 +29,12 @@ class WeatherViewModel: ObservableObject {
         }
     }
     
+    var dailyWeather : [Forecast] = [] {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     private var stateCurrent = StateModel.loading
     private var stateForecast = StateModel.loading
     
@@ -62,7 +68,10 @@ class WeatherViewModel: ObservableObject {
             guard let weather = self else {return}
             if let forecastWeather = forecastWeather {
                 weather.hourlyWeather = forecastWeather.list
+                weather.dailyWeather = forecastWeather.dailyList
                 weather.stateForecast = .success
+                print("🚨🚨 get daily forecast weather data")
+                print(weather.dailyWeather)
             }else {
                 weather.stateForecast = .failed
                 print("🚨🚨 failed")
@@ -72,10 +81,10 @@ class WeatherViewModel: ObservableObject {
     }
 
     private func updateStateView() {
-        if stateCurrent == .success/*, stateForecast == .success*/ {
+        if stateCurrent == .success, stateForecast == .success {
             stateModel = .success
         }
-        if stateCurrent == .failed/*, stateForecast == .failed*/ {
+        if stateCurrent == .failed, stateForecast == .failed {
             stateModel = .failed
         }
     }
