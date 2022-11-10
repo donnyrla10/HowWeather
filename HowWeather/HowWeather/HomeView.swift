@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var locationViewModel: LocationManager
+    @EnvironmentObject var weatherViewModel: WeatherViewModel
+    
     let data : CurrentWeather
     let hourly: [Forecast]
     let daily: [Forecast]
@@ -18,7 +21,6 @@ struct HomeView: View {
     
     var body: some View {
         ZStack{
-//            Image("02db")
             Image(iconName)
                 .resizable()
                 .ignoresSafeArea()
@@ -33,6 +35,11 @@ struct HomeView: View {
                 }
             }
         }
+//        .onAppear {
+//            print(locationViewModel.lastLocation?.coordinate.latitude ?? 0)
+//            print(locationViewModel.lastLocation?.coordinate.longitude ?? 0)
+////            weatherViewModel.getData(lat: locationViewModel.lastLocation?.coordinate.latitude ?? 0, lon: locationViewModel.lastLocation?.coordinate.longitude ?? 0)
+//        }
     }
 }
 

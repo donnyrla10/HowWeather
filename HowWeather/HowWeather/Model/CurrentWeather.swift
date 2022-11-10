@@ -13,7 +13,7 @@ struct Weather : Codable {
     var icon: String
     
     static func emptyInit() -> Weather {
-        return Weather(main: "", description: "", icon: "")
+        return Weather(main: "--", description: "--", icon: "")
     }
 }
 
@@ -73,7 +73,7 @@ struct CurrentWeather: Codable {
             visibility: 0,
 //            rain: Rain.emptyInit(),
             sys: System.emptyInit(),
-            name: ""
+            name: "City Name"
         )
     }
 }

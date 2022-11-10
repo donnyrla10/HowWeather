@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8271D62291A48F800CC79E7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8271D61291A48F800CC79E7 /* LocationManager.swift */; };
 		F82DB85E29090F5000D88BEC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB85D29090F5000D88BEC /* HeaderView.swift */; };
 		F82DB860290916D900D88BEC /* RecommendedClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB85F290916D900D88BEC /* RecommendedClothesView.swift */; };
 		F82DB86229091B9800D88BEC /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB86129091B9800D88BEC /* HourlyForecastView.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8271D61291A48F800CC79E7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F82DB85D29090F5000D88BEC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F82DB85F290916D900D88BEC /* RecommendedClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClothesView.swift; sourceTree = "<group>"; };
 		F82DB86129091B9800D88BEC /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				F899F50B2914111F005F0605 /* WeatherAPIService.swift */,
 				F8BA34A629193051009B16AA /* DateTransform.swift */,
+				F8271D61291A48F800CC79E7 /* LocationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				F899F50629140009005F0605 /* WeatherViewModel.swift in Sources */,
 				F8BA34A02918FB1A009B16AA /* StateModel.swift in Sources */,
 				F82DB8682909229400D88BEC /* DailyView.swift in Sources */,
+				F8271D62291A48F800CC79E7 /* LocationManager.swift in Sources */,
 				F899F4FB2913FC27005F0605 /* CurrentWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +380,7 @@
 				DEVELOPMENT_TEAM = PK8R4W75W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -405,6 +410,7 @@
 				DEVELOPMENT_TEAM = PK8R4W75W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
