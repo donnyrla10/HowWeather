@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var locationViewModel: LocationManager
     @EnvironmentObject var weatherViewModel: WeatherViewModel
     
     let data : CurrentWeather
@@ -21,14 +20,15 @@ struct HomeView: View {
     
     var body: some View {
         ZStack{
-            Image(iconName)
+            Image("01db")
+//            Image(iconName)
                 .resizable()
                 .ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 20){
                     HeaderView(currentData: data, dailyData: daily)
                         .padding(.vertical, 40)
-                    RecommendedClothesView()
+                    RecommendedClothesView(dailyData: daily, currentData: data)
                     HourlyForecastView(hourly: hourly)
                     DailyForecastView(daily: daily)
                     CurrentInfoView(currentData: data)

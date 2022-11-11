@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var vm = WeatherViewModel()
-//    @StateObject var locationViewModel = LocationManager()
-    
     var body: some View {
         if vm.stateModel == .success {
             HomeView(data: vm.currentWeather, hourly: vm.hourlyWeather, daily: vm.dailyWeather)
