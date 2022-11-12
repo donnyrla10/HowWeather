@@ -20,8 +20,8 @@ struct HomeView: View {
     
     var body: some View {
         ZStack{
-            Image("01db")
-//            Image(iconName)
+//            Image("01db")
+            Image(iconName)
                 .resizable()
                 .ignoresSafeArea()
             ScrollView {
