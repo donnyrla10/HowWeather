@@ -22,6 +22,7 @@ struct ForecastWeather: Codable {
         return ForecastWeather(code: "", message: 0, list: [])
     }
     
+    //Model data의 직접적인 값 변경?
     var dailyList: [Forecast] {
         var daily: [Forecast] = [] //빈 배열
         var entity : Forecast = Forecast(date: 0, main: Main.emptyInit(), weather: [Weather.emptyInit()])
@@ -31,10 +32,6 @@ struct ForecastWeather: Codable {
         }
         
         var nextDay = first.date.dateFromMilliseconds().day() //오늘 요일
-        //daily == list의 첫번째 원소 (현재 시각 다음의 +3H인 예측)
-//        if first.date.dateFromMilliseconds().day() != Date().day() { //오늘의 요일과 다르다면 (집어넣기)
-//            nextDay = first.date.dateFromMilliseconds().day() //내일 요일
-//        }
         
         //하나의 day마다 8개의 hour이 들어간다. 그러므로 day를 기준으로 하나만 들어가도록 한다!
         //최고, 최소값을 구하기 위해 -> 같은 요일들을 체크하면서 max, min 찾기

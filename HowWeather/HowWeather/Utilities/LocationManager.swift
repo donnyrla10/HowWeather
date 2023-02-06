@@ -22,7 +22,7 @@
 //        manager.requestWhenInUseAuthorization()
 //        manager.startUpdatingLocation()
 //    }
-//
+//  
 //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        lastLocation = locations.first
 //        fetchCountryAndCity(for: lastLocation)

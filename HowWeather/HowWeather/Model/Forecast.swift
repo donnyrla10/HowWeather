@@ -20,11 +20,9 @@ struct Rain3h: Codable {
 }
 
 struct Forecast: Codable{
-//    let id = UUID()
     var date: Int
     var main: Main
     var weather: [Weather]
-//    let rain: Rain3h
     
     private enum CodingKeys: String, CodingKey {
         case date = "dt"

@@ -69,6 +69,7 @@
 		F82DB85C29090E7D00D88BEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8BA34A12918FC26009B16AA /* ContentView.swift */,
 				F82DB85D29090F5000D88BEC /* HeaderView.swift */,
 				F82DB85F290916D900D88BEC /* RecommendedClothesView.swift */,
 				F82DB86129091B9800D88BEC /* HourlyForecastView.swift */,
@@ -76,6 +77,8 @@
 				F82DB8652909228C00D88BEC /* DailyForecastView.swift */,
 				F82DB8672909229400D88BEC /* DailyView.swift */,
 				F82DB8692909265C00D88BEC /* CurrentInfoView.swift */,
+				F83ECE762907BD6F00E826F0 /* HowWeatherApp.swift */,
+				F83ECE782907BD6F00E826F0 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,16 +110,14 @@
 		F83ECE752907BD6F00E826F0 /* HowWeather */ = {
 			isa = PBXGroup;
 			children = (
+				F85C48702990E26E00383BEE /* Services */,
 				F8BA34A529193032009B16AA /* Utilities */,
 				F899F5042913FFF6005F0605 /* ViewModel */,
 				F899F4F92913FC13005F0605 /* Model */,
 				F82DB86D29092A0A00D88BEC /* Modifier */,
 				F82DB85C29090E7D00D88BEC /* View */,
-				F83ECE762907BD6F00E826F0 /* HowWeatherApp.swift */,
-				F83ECE782907BD6F00E826F0 /* HomeView.swift */,
 				F83ECE7A2907BD7400E826F0 /* Assets.xcassets */,
 				F83ECE7C2907BD7400E826F0 /* Preview Content */,
-				F8BA34A12918FC26009B16AA /* ContentView.swift */,
 			);
 			path = HowWeather;
 			sourceTree = "<group>";
@@ -127,6 +128,14 @@
 				F83ECE7D2907BD7400E826F0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F85C48702990E26E00383BEE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F899F50B2914111F005F0605 /* WeatherAPIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F899F4F92913FC13005F0605 /* Model */ = {
@@ -151,7 +160,6 @@
 		F8BA34A529193032009B16AA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F899F50B2914111F005F0605 /* WeatherAPIService.swift */,
 				F8BA34A629193051009B16AA /* DateTransform.swift */,
 				F8271D61291A48F800CC79E7 /* LocationManager.swift */,
 			);

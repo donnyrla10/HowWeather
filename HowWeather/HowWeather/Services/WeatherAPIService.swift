@@ -9,12 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-class WeatherAPIService /*: NSObject, CLLocationManagerDelegate*/ {
-    private let manager = CLLocationManager()
-//    private var lastLocation: CLLocation?
-//    private var currentPlacemark: CLPlacemark?
-    
-    //더 공부하기
+class WeatherAPIService {
     typealias CurrentWeatherCompletionHandler = (CurrentWeather?, Error?) -> Void
     typealias ForecastWeatherCompletionHandler = (ForecastWeather?, Error?) -> Void
     
@@ -33,27 +28,10 @@ class WeatherAPIService /*: NSObject, CLLocationManagerDelegate*/ {
     
     convenience init() {
         self.init(configuration: .default)
-//        manager.delegate = self
-//        manager.desiredAccuracy = kCLLocationAccuracyBest
-//        manager.requestWhenInUseAuthorization()
-//        manager.startUpdatingLocation()
     }
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        lastLocation = locations.first
-//
-////        fetchCountryAndCity(for: lastLocation)
-//    }
-    
-//    func fetchCountryAndCity(for location: CLLocation?){
-//        guard let location = location else {return}
-//        let geocoder = CLGeocoder()
-//        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-//            self.currentPlacemark = placemarks?.first
-//        }
-//    }
-    
     //request weatherCurrentAPI
+    //ViewModel에서 얻은 location 값으로
     func getCurrentRequest(lastLocation: CLLocation?, completionHandler completion: @escaping( _ object: CurrentWeather?, _ error: Error?) -> ()) {
         let url = weatherURL(suffix: "weather", lat: lastLocation?.coordinate.latitude ?? 0, lon: lastLocation?.coordinate.longitude ?? 0)
         let request = URLRequest(url: url)
@@ -65,8 +43,8 @@ class WeatherAPIService /*: NSObject, CLLocationManagerDelegate*/ {
                     if httpResponse.statusCode == 200 {
                         do{
                             let result = try self.decoder.decode(CurrentWeather.self, from: data)
-//                            print("🌥 current weather Data")
-//                            print(result)
+                            print("🌥 current weather Data")
+                            print(result)
                             completion(result, nil)
                         } catch let error {
                             print("🚨 error")
@@ -98,8 +76,8 @@ class WeatherAPIService /*: NSObject, CLLocationManagerDelegate*/ {
                     if httpResponse.statusCode == 200 {
                         do{
                             let result = try self.decoder.decode(ForecastWeather.self, from: data)
-//                            print("🌥 forescast Data")
-//                            print(result)
+                            print("🌥 forescast Data")
+                            print(result)
                             completion(result, nil)
                         } catch let error {
                             print("🚨 error")

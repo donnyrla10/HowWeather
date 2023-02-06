@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = WeatherViewModel()
+    @StateObject var vm = WeatherViewModel() //VM 인스턴스 생성
     var body: some View {
+        //네트워킹 성공시 -> HomeView 출력
         if vm.stateModel == .success {
             HomeView(data: vm.currentWeather, hourly: vm.hourlyWeather, daily: vm.dailyWeather)
         }

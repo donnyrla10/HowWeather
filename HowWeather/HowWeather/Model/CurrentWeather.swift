@@ -13,7 +13,7 @@ struct Weather : Codable {
     var icon: String
     
     static func emptyInit() -> Weather {
-        return Weather(main: "--", description: "--", icon: "")
+        return Weather(main: "--", description: "--", icon: "") //초기 값
     }
 }
 
@@ -37,18 +37,6 @@ struct Main: Codable {
     }
 }
 
-struct Rain: Codable {
-    let prob: Double
-    
-    private enum CodingKeys : String, CodingKey {
-        case prob = "1h"
-    }
-    
-    static func emptyInit() -> Rain {
-        return Rain(prob: 0.0)
-    }
-}
-
 struct System: Codable{
     let sunrise: Int
     let sunset: Int
@@ -62,7 +50,6 @@ struct CurrentWeather: Codable {
     let weather: [Weather]
     let main: Main
     let visibility: Int
-//    let rain: Rain
     let sys: System
     let name: String
     
@@ -71,7 +58,6 @@ struct CurrentWeather: Codable {
             weather: [Weather.emptyInit()],
             main: Main.emptyInit(),
             visibility: 0,
-//            rain: Rain.emptyInit(),
             sys: System.emptyInit(),
             name: "City Name"
         )
