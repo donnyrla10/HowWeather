@@ -25,8 +25,11 @@
 - current weather
 
 - hourly weather (for 3 hours)
+
 - daily weather (for 5 days)
+
 - current weather information
+
 - 현재 위치를 기반으로 날씨 정보 출력
 
 <br>
